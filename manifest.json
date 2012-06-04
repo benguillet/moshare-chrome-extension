@@ -9,11 +9,11 @@
   "background_page": "background.html",
   "browser_action": {
     "default_title": "moShare this page",
-    "default_icon": "icon.png"
+    "default_icon": "icons/moshare-19.png"
   },
   "icons": {
-    "16": "16.png",
-    "48": "48.png",
-    "128": "128.png"
+    "16": "icons/moshare-16.png",
+    "48": "icons/moshare-48.png",
+    "128": "icons/moshare-128.png"
   }
 }
