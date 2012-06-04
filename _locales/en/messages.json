@@ -1,0 +1,23 @@
+{
+    "description" : {
+        "message" : "moShare, the mobile sharing service that enables you to send videos, pictures, music and stories to your friends' mobile phones."
+    },
+    "title_image" : {
+        "message" : "moShare this image"
+    },
+    "title_video" : {
+        "message" : "moShare this video"
+    },
+    "title_audio" : {
+        "message" : "moShare this audio"
+    },
+    "title_page"  : {
+        "message" : "moShare this page"
+    },
+    "title_link"  : {
+        "message" : "moShare this link"
+    },
+    "title_selection"  : {
+        "message" : "moShare '%s'"
+    }
+}
