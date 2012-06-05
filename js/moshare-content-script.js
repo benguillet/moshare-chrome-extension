@@ -1,4 +1,5 @@
 (function($, window, undefined) {
+    var moshareIcon16URL = chrome.extension.getURL("icons/moshare-16.png");
     var moshareIcon19URL = chrome.extension.getURL("icons/moshare-19.png");
 
     var moshareButtonTemplate = _.template(
@@ -7,15 +8,15 @@
         '</a>'
     );
 
-    var makeMoshareDiv = function(tweetURL, tweetText) {
+    var makeMoshareDiv = function(tweetURL, tweetText, parentEl) {
         return $(moshareButtonTemplate({
             share: tweetURL,
             message: tweetText,
-            moshareIconURL: moshareIcon19URL
+            moshareIconURL: $(parentEl).hasClass('simple-tweet') ? moshareIcon16URL : moshareIcon19URL
         }));
     };
 
-    var extractTextTweet = {
+    var extractTextTweet = {    
         '.js-stream-tweet':   function(idx, el) {
             var text      = $('p.js-tweet-text', el);
             var permalink = $('a.js-permalink', el);
@@ -36,7 +37,7 @@
             if (0 === $('.moshare-link', parentEl).length) {
                 var tweetText = encodeURIComponent(el[0].text());
                 var tweetURL  = encodeURIComponent('https://twitter.com/' + el[1].attr('href'));
-                var moshareButton = makeMoshareDiv(tweetURL, tweetText);     
+                var moshareButton = makeMoshareDiv(tweetURL, tweetText, parentEl);     
                 moshareButton.click(function(e) {
                     window.open('http://www.mogreet.com/moshare/it/?share=' + tweetURL + '&message=' + tweetText + '&channel=chrome-plugin-twitter');
                     e.preventDefault();
